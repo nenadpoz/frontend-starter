@@ -1,0 +1,13 @@
+{% macro arrow(src, customClass, href, arrowUp) %}
+
+{% if arrowUp %}
+<a class="arrow arrow--up {{ customClass }}" href="{{ href }}">
+  <img src="assets/img/{{ src }}.svg" alt="">
+</a>
+{% else %}
+<a class="arrow {{ customClass }}" href="{{ href }}">
+  <img src="assets/img/{{ src }}.svg" alt="">
+</a>
+{% endif %}
+
+{% endmacro %}

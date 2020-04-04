@@ -1,0 +1,18 @@
+/* ------------------------------------*\
+    #link
+\*------------------------------------ */
+
+a {
+  color: $color-link;
+  transition: color .15s ease;
+
+  &:hover {
+    color: darken($color-link, 20%);
+  }
+
+  &:focus,
+  &:active {
+    outline: none;
+    color: darken($color-link, 20%);
+  }
+}

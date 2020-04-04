@@ -1,0 +1,27 @@
+//base font settings
+$base-font-family: Arial,
+sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+$base-radius: 0;
+
+$spacing-unit: 20px;
+$spacing-unit--small: 10px;
+
+$page-max-width: 1560px;
+$page-default-width: 1160px;
+
+// Breakpoints
+$breakpoint-tiny: 580px;
+$breakpoint-small: 768px;
+$breakpoint-medium: 1024px;
+$breakpoint-large: 1216px;
+$breakpoint-extralarge: 1408px;
+
+$btn--primary-height: 40px;
+$btn--primary-padding: 0 20px;
+
+$input-height: 40px;
+$input-padding: 20px;
+$input-padding--large: 25px 0;

@@ -1,0 +1,84 @@
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+
+  & {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+  }
+}
+
+@mixin font-size($font-size, $line-height: auto) {
+  font-size: $font-size;
+  font-size: ($font-size / $base-font-size) * 1rem;
+
+  @if $line-height == auto {
+    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+  }
+
+  @else {
+    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+      line-height: $line-height;
+    }
+
+    @else if ($line-height != none and $line-height != false) {
+      @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
+    }
+  }
+}
+
+//MEDIA QUERIES MIXINS
+//USAGE: @include screen(320px, 768px) { ... }
+@mixin screen($res-min, $res-max) {
+  @media screen and (min-width: $res-min) and (max-width: $res-max) {
+    @content;
+  }
+}
+
+//USAGE: @include max-screen(768px) { ... }
+@mixin max-screen($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+
+//USAGE: @include min-screen(320px) { ... }
+@mixin min-screen($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}
+
+//PLACEHOLDER INPUT
+@mixin input-placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin unselectable {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}

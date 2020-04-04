@@ -1,0 +1,55 @@
+.button {
+  -webkit-font-smoothing: inherit;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  color: $color-base;
+  transition: background-color .2s ease, color .2s ease;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  transition: all .2s ease;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: $base-font-family;
+  text-decoration: none;
+  line-height: 1;
+
+  &:not(:disabled) {
+
+    &:hover {}
+
+    &:focus {}
+
+    &:active {
+      outline: none;
+      box-shadow: none !important;
+      text-decoration: none;
+    }
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed !important;
+  }
+}
+
+
+.button--primary {
+  display: inline-flex;
+  align-items: center;
+  height: $btn--primary-height;
+  width: auto;
+  padding: $btn--primary-padding;
+  color: $color-btn;
+  font-size: $base-font-size;
+  text-decoration: none;
+
+  &:not(:disabled) {
+
+    &:hover,
+    &:focus,
+    &:active {}
+  }
+}

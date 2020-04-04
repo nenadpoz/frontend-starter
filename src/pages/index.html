@@ -1,0 +1,16 @@
+{% extends "layouts/default.html" %}
+
+{% set homepage = true %}
+{% set pagetitle = "Homepage" %}
+{% set bodyClass = "homepage" %}
+
+{% block content %}
+{% include "./components/header.html" -%}
+
+<div>
+  {{ allMacros.arrow('arrow1', 'arrow-class', 'nextpage.html', 'false') }}
+</div>
+
+{% include "./components/footer.html" -%}
+
+{% endblock %}
